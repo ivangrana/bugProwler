@@ -1,7 +1,6 @@
 from agno.agent import Agent
 from agno.db.sqlite import SqliteDb
 from agno.models.openai import OpenAIChat
-from agno.os import AgentOS
 
 # Setup your database
 db = SqliteDb(db_file="agno.db")
@@ -21,6 +20,3 @@ agno_assist = Agent(
     reasoning=False,
     debug_level=1,
 )
-
-play = AgentOS(agents=[agno_assist])
-app = play.get_app()
